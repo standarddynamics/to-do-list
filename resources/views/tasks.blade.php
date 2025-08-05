@@ -7,7 +7,14 @@
                 <div>
                     <form method="post" action="{{ route('tasks') }}" class="row g-3">
                         @csrf
-                        <input type="text" name="name" class="form-control form-control-sm" placeholder="Insert task name" aria-label="Task name" required />
+                        <input 
+                            type="text" 
+                            name="name" 
+                            class="form-control form-control-sm" 
+                            placeholder="Insert task name" 
+                            aria-label="Task name" 
+                            required 
+                            autofocus />
                         <button type="submit" class="btn btn-primary mb-3 btn-sm">Add</button>
                     </form>
                 </div>
@@ -40,13 +47,23 @@
                                                         <div class="mx-1">
                                                             <form method="post" action="{{ route('tasks.complete', $task) }}">
                                                                 @csrf
-                                                                <button type="submit" class="btn btn-success"><i class="bi bi-check-lg"></i></button>
+                                                                <button 
+                                                                    type="submit" 
+                                                                    class="btn btn-success" 
+                                                                    title="Mark As Complete">
+                                                                    <i class="bi bi-check-lg"></i>
+                                                                </button>
                                                             </form>
                                                         </div>
                                                         <div class="mx-1">
                                                             <form method="post" action="{{ route('tasks.delete', $task) }}">
                                                                 @csrf
-                                                                <button type="submit" class="btn btn-danger"><i class="bi bi-x-lg"></i></button></div>
+                                                                <button 
+                                                                    type="submit" 
+                                                                    class="btn btn-danger" 
+                                                                    title="Delete Task">
+                                                                    <i class="bi bi-x-lg"></i>
+                                                                </button>
                                                             </form>
                                                         </div>
                                                     </div>
