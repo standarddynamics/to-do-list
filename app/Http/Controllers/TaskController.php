@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -12,14 +13,9 @@ class TaskController extends Controller
      */
     public function index(): View
     {
-        $tasks = [
-            [
-                'id' => 1,
-                'name' => 'Task name'
-            ]
-        ];
+        $data = Task::all();
 
-        return view('tasks', ['tasks' => $tasks]);
+        return view('tasks', ['tasks' => $data]);
     }
 
     /**
