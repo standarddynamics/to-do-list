@@ -21,7 +21,7 @@
             <section class="col-4">
                 <form method="post" action="{{ route('tasks') }}" class="row g-3">
                     @csrf
-                    <input type="text" name="task-name" class="form-control form-control-sm" placeholder="Insert task name" aria-label="Task name" required />
+                    <input type="text" name="name" class="form-control form-control-sm" placeholder="Insert task name" aria-label="Task name" required />
                     <button type="submit" class="btn btn-primary mb-3 btn-sm">Add</button>
                 </form>
             </section>
