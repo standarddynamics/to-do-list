@@ -19,7 +19,8 @@
     <main class="container p-3">
         <div class="row">
             <section class="col-4">
-                <form method="post" action="/tasks/add" class="row g-3">
+                <form method="post" action="{{ route('tasks') }}" class="row g-3">
+                    @csrf
                     <input type="text" name="task-name" class="form-control form-control-sm" placeholder="Insert task name" aria-label="Task name" required />
                     <button type="submit" class="btn btn-primary mb-3 btn-sm">Add</button>
                 </form>
@@ -34,20 +35,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="fw-light">1</td>
-                                <td>
-                                    <div class="row justify-content-evenly">
-                                        <div class="col-9">Task name</div>
-                                        <div class="col-3">
-                                            <div class="d-flex justify-content-end">
-                                                <div class="mx-1"><button type="submit" class="btn btn-success"><i class="bi bi-check-lg"></i></button></div>
-                                                <div class="mx-1"><button type="submit" class="btn btn-danger"><i class="bi bi-x-lg"></i></button></div>
+                            @foreach ($tasks as $task)
+                                <tr>
+                                    <td class="fw-light">{{ $task['id'] }}</td>
+                                    <td>
+                                        <div class="row justify-content-evenly">
+                                            <div class="col-9">{{ $task['name'] }}</div>
+                                            <div class="col-3">
+                                                <div class="d-flex justify-content-end">
+                                                    <div class="mx-1">
+                                                        <form method="post" action="{{ route('tasks.complete', $task) }}">
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-success"><i class="bi bi-check-lg"></i></button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="mx-1">
+                                                        <form method="post" action="{{ route('tasks.delete', $task) }}">
+                                                            @csrf
+                                                            <button type="submit" class="btn btn-danger"><i class="bi bi-x-lg"></i></button></div>
+                                                        </form>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
