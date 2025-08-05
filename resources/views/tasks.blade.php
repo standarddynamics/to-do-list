@@ -9,6 +9,8 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ Vite::asset('resources/css/app.css') }}" >
 </head>
 <body class="bg-light">
     <header class="container p-3">
@@ -37,8 +39,8 @@
                             <tr>
                                 <td class="fw-light">1</td>
                                 <td>Task name</td>
-                                <td>Mark complete button</td>
-                                <td>Delete button</td>
+                                <td><button type="submit" class="btn btn-success"><i class="bi bi-check-lg"></i></button></td>
+                                <td><button type="submit" class="btn btn-danger"><i class="bi bi-x-lg"></i></button></td>
                             </tr>
                         </tbody>
                     </table>
