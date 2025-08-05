@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->mediumText('name');
-            $table->boolean('is_completed');
+            $table->boolean('is_completed')->default(false);
             $table->timestamps();
             $table->softDeletes('deleted_at');
         });
