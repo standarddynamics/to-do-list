@@ -31,16 +31,22 @@
                             <tr>
                                 <th class="fw-light">#</th>
                                 <th class="fw-light">Task</th>
-                                <th></th>
-                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="fw-light">1</td>
-                                <td>Task name</td>
-                                <td><button type="submit" class="btn btn-success"><i class="bi bi-check-lg"></i></button></td>
-                                <td><button type="submit" class="btn btn-danger"><i class="bi bi-x-lg"></i></button></td>
+                                <td>
+                                    <div class="row justify-content-evenly">
+                                        <div class="col-9">Task name</div>
+                                        <div class="col-3">
+                                            <div class="d-flex justify-content-end">
+                                                <div class="mx-1"><button type="submit" class="btn btn-success"><i class="bi bi-check-lg"></i></button></div>
+                                                <div class="mx-1"><button type="submit" class="btn btn-danger"><i class="bi bi-x-lg"></i></button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
