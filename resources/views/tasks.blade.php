@@ -1,29 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MLP To-Do</title>
+@extends('layouts.app')
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ Vite::asset('resources/css/app.css') }}" >
-</head>
-<body class="bg-light">
-    <header class="container p-3">
-        <img src="{{ Vite::asset('assets/logo.png') }}" alt="MLP" />
-    </header>
-    <main class="container p-3 mt-2">
+@section('content')
+    <div class="container p-3 mt-2">
         <div class="row">
             <section class="col-4">
-                <form method="post" action="{{ route('tasks') }}" class="row g-3">
-                    @csrf
-                    <input type="text" name="name" class="form-control form-control-sm" placeholder="Insert task name" aria-label="Task name" required />
-                    <button type="submit" class="btn btn-primary mb-3 btn-sm">Add</button>
-                </form>
+                <div>
+                    <form method="post" action="{{ route('tasks') }}" class="row g-3">
+                        @csrf
+                        <input type="text" name="name" class="form-control form-control-sm" placeholder="Insert task name" aria-label="Task name" required />
+                        <button type="submit" class="btn btn-primary mb-3 btn-sm">Add</button>
+                    </form>
+                </div>
             </section>
             <section class="col-8">
                 <div class="rounded bg-white p-3 border">
@@ -74,11 +61,5 @@
                 </div>
             </section>
         </div>
-    </main>
-    <footer class="container mt-5">
-        <div class="row">
-            <div class="col text-center"><small>Copyright &copy; {{ date('Y') }} All rights reserved.</small></div>
-        </div>
-    </footer>
-</body>
-</html>
+    </div>
+@endsection
