@@ -10,7 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 </head>
-<body>
-
+<body class="bg-light">
+    <div class="container p-3">
+        <div class="row">
+            <div class="col"><img src="{{ Vite::asset('assets/logo.png') }}" /></div>
+        </div>
+    </div>
 </body>
 </html>
