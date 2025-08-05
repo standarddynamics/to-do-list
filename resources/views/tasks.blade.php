@@ -23,7 +23,26 @@
                 </form>
             </section>
             <section class="col-8">
-                <p>Task list</p>
+                <div class="rounded bg-white p-3 fw-lighter">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="fw-light">#</th>
+                                <th class="fw-light">Task</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="fw-light">1</td>
+                                <td>Task name</td>
+                                <td>Mark complete button</td>
+                                <td>Delete button</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </section>
         </div>
     </main>
