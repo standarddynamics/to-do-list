@@ -16,7 +16,7 @@
     <header class="container p-3">
         <img src="{{ Vite::asset('assets/logo.png') }}" alt="MLP" />
     </header>
-    <main class="container p-3">
+    <main class="container p-3 mt-2">
         <div class="row">
             <section class="col-4">
                 <form method="post" action="{{ route('tasks') }}" class="row g-3">
@@ -26,18 +26,18 @@
                 </form>
             </section>
             <section class="col-8">
-                <div class="rounded bg-white p-3 fw-lighter">
+                <div class="rounded bg-white p-3 border">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th class="fw-light">#</th>
-                                <th class="fw-light">Task</th>
+                                <th>#</th>
+                                <th>Task</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($tasks as $task)
                                 <tr>
-                                    <td class="fw-light">{{ $loop->iteration }}</td>
+                                    <td class="fw-bold">{{ $loop->iteration }}</td>
                                     <td>
                                         <div class="row justify-content-evenly">
                                             <div class="col-9">
@@ -75,5 +75,10 @@
             </section>
         </div>
     </main>
+    <footer class="container mt-5">
+        <div class="row">
+            <div class="col text-center"><small>Copyright &copy; {{ date('Y') }} All rights reserved.</small></div>
+        </div>
+    </footer>
 </body>
 </html>

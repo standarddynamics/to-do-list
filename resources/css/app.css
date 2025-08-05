@@ -1,1 +1,6 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
+
+html,
+body {
+    font-family: "Lato", sans-serif;
+}
