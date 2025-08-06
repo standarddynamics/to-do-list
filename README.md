@@ -1,6 +1,6 @@
 # Before starting...
 
-I've used Vite for asset building and used Bootstrap icons so be for starting the app please run:
+I've used Vite for asset building and used Bootstrap icons so before starting the app please run:
 
 `npm install && npm run build`
 
